@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
+import SearchForm from "./SearchForm";
 
 let outArray = [];
-let RenderNumber = 8;
 
 export default function CharacterList()
 {
   let [people, sPeople] = useState([]);
+  let [find, sFind] = useState("");
 
   function fPush(inc)
   {
@@ -15,12 +16,11 @@ export default function CharacterList()
     outArray.forEach((i)=>{copy.push(i)});
     copy.push(inc);
     outArray = copy;
-    if (outArray.length == RenderNumber)
-      sPeople(outArray);
+    sPeople(outArray);
   }
 
   useEffect(()=>{
-    for (let i = 1; i < RenderNumber + 1; i++)
+    for (let i = 1; i < 9; i++)
       axios.get("https://rickandmortyapi.com/api/character/" + i).then((response)=>
         {
           fPush(response.data);
@@ -28,11 +28,14 @@ export default function CharacterList()
   }, []);
 
   return (
-    <section className="character-list">
-      {people.map((i)=>
-        {
-          return <CharacterCard key={i.id} info={i} />;
-        })}
-    </section>
+    <div>
+      <SearchForm find={find} sFind={sFind} />
+      <section className="character-list">
+        {people.map((i)=>
+          {
+            return i.name.toLowerCase().indexOf(find.toLowerCase()) != -1 ? <CharacterCard key={i.id} info={i} /> : null;
+          })}
+      </section>
+    </div>
   );
 }
