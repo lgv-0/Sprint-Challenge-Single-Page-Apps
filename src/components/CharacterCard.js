@@ -1,4 +1,5 @@
 import React from "react";
+import styled from "styled-components";
   /*
     Created
     Episode
@@ -14,12 +15,16 @@ import React from "react";
   */
 export default function CharacterCard(props) {
   return (
-    <div>
+    <PCard>
       <h3>[{props.info.id}] {props.info.name}</h3>
       <h4>{props.info.type}</h4>
       <h4>{props.info.species}</h4>
       <h4>{props.info.gender}</h4>
       <h4>{props.info.location['name']}</h4>
-    </div>
+    </PCard>
   );
 }
+
+let PCard = styled.div`
+  width: 49%;
+`;
