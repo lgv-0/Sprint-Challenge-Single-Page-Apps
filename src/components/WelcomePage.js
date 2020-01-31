@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-export default function WelcomePage() {
+export default function WelcomePage()
+{
   return (
     <section className="welcome-page">
       <header>
@@ -10,6 +12,8 @@ export default function WelcomePage() {
           src="https://rickandmortyapi.com/api/character/avatar/1.jpeg"
           alt="rick"
         />
+        <br />
+        <Link to="/characters">Come see the characters!</Link>
       </header>
     </section>
   );

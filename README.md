@@ -27,7 +27,7 @@ Demonstrate your understanding of this Sprint's concepts by answering the follow
 
 - [ ]  Explain benefit(s) using `client-side routing`?
 
-> Answer:
+> Answer: Client-side routing allows the workload to shift to directly at connection, providing the essential framework for all pages on the first load.
 
 ## Project Set Up
 
