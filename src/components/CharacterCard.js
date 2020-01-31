@@ -28,9 +28,12 @@ export default function CharacterCard(props)
 }
 
 let PCard = styled.div`
+  animation: fadein 1s forwards;
+
   text-align: center;
   width: 49%;
   border: 1px solid black;
+
   h3
   {
     text-decoration: underline;
@@ -38,5 +41,11 @@ let PCard = styled.div`
   img
   {
     margin-top: 3px;
+  }
+
+  @keyframes fadein
+  {
+    0% {opacity: 0%; }
+    100% {opacity: 100%; }
   }
 `;
