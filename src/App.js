@@ -4,7 +4,8 @@ import CharacterList from "./components/CharacterList.js";
 import WelcomePage from "./components/WelcomePage.js";
 import { BrowserRouter, Route, Link } from "react-router-dom";
 
-export default function App() {
+export default function App()
+{
   return (
     <main>
       <Header />

@@ -13,7 +13,8 @@ import styled from "styled-components";
     Type
     Url
   */
-export default function CharacterCard(props) {
+export default function CharacterCard(props)
+{
   return (
     <PCard>
       <img src={props.info.image} />
