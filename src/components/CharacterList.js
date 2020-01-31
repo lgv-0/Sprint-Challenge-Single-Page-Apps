@@ -3,6 +3,7 @@ import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
 let outArray = [];
+let RenderNumber = 8;
 
 export default function CharacterList()
 {
@@ -14,12 +15,12 @@ export default function CharacterList()
     outArray.forEach((i)=>{copy.push(i)});
     copy.push(inc);
     outArray = copy;
-    if (outArray.length == 7)
+    if (outArray.length == RenderNumber)
       sPeople(outArray);
   }
 
   useEffect(()=>{
-    for (let i = 1; i < 8; i++)
+    for (let i = 1; i < RenderNumber + 1; i++)
       axios.get("https://rickandmortyapi.com/api/character/" + i).then((response)=>
         {
           fPush(response.data);

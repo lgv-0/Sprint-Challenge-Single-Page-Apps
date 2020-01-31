@@ -16,6 +16,7 @@ import styled from "styled-components";
 export default function CharacterCard(props) {
   return (
     <PCard>
+      <img src={props.info.image} />
       <h3>[{props.info.id}] {props.info.name}</h3>
       <h4>{props.info.type}</h4>
       <h4>{props.info.species}</h4>
@@ -26,5 +27,15 @@ export default function CharacterCard(props) {
 }
 
 let PCard = styled.div`
+  text-align: center;
   width: 49%;
+  border: 1px solid black;
+  h3
+  {
+    text-decoration: underline;
+  }
+  img
+  {
+    margin-top: 3px;
+  }
 `;
